@@ -1,9 +1,12 @@
-<app-header></app-header>
+<app-header
+(recipeClicked) ="onRecipeClicked($event)"
+(shoppingListClicked)="onShoppingListClicked($event)"
+></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="isRecipeVisible === true"></app-recipes>
+      <app-shopping-list *ngIf="isRecipeVisible === false"></app-shopping-list>
     </div>
   </div>
 </div>
